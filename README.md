@@ -336,10 +336,32 @@ RAG-Based College Chatbot/
 ├── docs/
 │   └── spec.md                               # Software specification document (SDD)
 ├── .gitignore
+├── render.yaml                               # Render Blueprint deployment configuration
 ├── package.json                              # Root workspace scripts
 ├── spec.md                                   # Root specification document
 └── README.md                                 # Documentation & local setup instructions
 ```
+
+---
+
+## ☁️ Production Deployment (Render)
+
+This repository includes a pre-configured [`render.yaml`](file:///c:/Users/SHREYA/OneDrive/Desktop/Projects/RAG-Based%20College%20Chatbot/render.yaml) Blueprint for deploying the backend web service on [Render](https://render.com/).
+
+### Deployment Steps:
+1. Link your GitHub repository (`rag-college-chatbot`) to Render as a **Web Service** or **Blueprint**.
+2. **Build Settings**:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Health Check Path**: `/api/health`
+3. **Environment Variables** (Configured in Render Dashboard):
+   - `NODE_ENV`: `production`
+   - `MONGODB_URI`: Your MongoDB Atlas URI (`mongodb+srv://<user>:<password>@cluster.mongodb.net/collegegpt?retryWrites=true&w=majority`)
+   - `JWT_SECRET`: Random 32+ character secure secret
+   - `CLIENT_URL`: URL of your deployed frontend (e.g. Vercel/Render)
+4. **MongoDB Atlas Network Access**:
+   - Add `0.0.0.0/0` (Allow access from anywhere) in MongoDB Atlas ➔ Network Access.
 
 ---
 
