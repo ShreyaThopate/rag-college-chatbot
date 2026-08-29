@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { MongoMemoryServer } from 'mongodb-memory-server';
 import { config } from './env.js';
 
 let mongod = null;
@@ -11,29 +10,29 @@ let mongod = null;
 export const maskMongoUri = (uri) => {
   if (!uri) return 'undefined';
   try {
-    // Handle standard mongodb:// or mongodb+srv:// URIs
-    const protocol = uri.startsWith('mongodb+srv://') ? 'mongodb+srv://' : 'mongodb://';
+    const isSrv = uri.startsWith('mongodb+srv://');
+    const protocol = isSrv ? 'mongodb+srv://' : 'mongodb://';
     const withoutProto = uri.replace(/^mongodb(\+srv)?:\/\//, '');
     const parts = withoutProto.split('@');
-    
+
     if (parts.length > 1) {
-      // Credentials present: mask them completely
       const hostAndRest = parts[1];
       const hostParts = hostAndRest.split('/');
       const host = hostParts[0];
       const dbAndQuery = hostParts.slice(1).join('/');
-      const dbName = dbAndQuery.split('?')[0] || 'default';
+      const dbName = dbAndQuery.split('?')[0] || 'collegegpt';
       return `${protocol}***:***@${host}/${dbName}`;
     } else {
-      // No credentials
       const hostParts = parts[0].split('/');
       const host = hostParts[0];
       const dbAndQuery = hostParts.slice(1).join('/');
-      const dbName = dbAndQuery.split('?')[0] || 'default';
+      const dbName = dbAndQuery.split('?')[0] || 'collegegpt';
       return `${protocol}${host}/${dbName}`;
     }
   } catch {
-    return 'mongodb://***:***@[configured_cluster]';
+    return uri.startsWith('mongodb+srv://')
+      ? 'mongodb+srv://***:***@[cluster]/collegegpt'
+      : 'mongodb://***:***@[host]/collegegpt';
   }
 };
 
@@ -51,7 +50,9 @@ export const getDatabaseStatus = () => {
   const state = readyStates[mongoose.connection.readyState] || 'unknown';
   const isConnected = mongoose.connection.readyState === 1;
   const host = mongoose.connection.host || '';
-  const isAtlas = host.includes('mongodb.net') || (config.mongoUri && config.mongoUri.startsWith('mongodb+srv://'));
+  const isAtlas =
+    host.includes('mongodb.net') ||
+    (config.mongoUri && config.mongoUri.startsWith('mongodb+srv://'));
 
   return {
     status: state,
@@ -64,65 +65,70 @@ export const getDatabaseStatus = () => {
 };
 
 /**
- * Initializes and connects to MongoDB Atlas or local MongoDB
+ * Initializes and connects to MongoDB Atlas in production or local MongoDB with fallback in development
  */
 export const connectDB = async () => {
-  const uri = config.mongoUri;
-  const isSrv = uri.startsWith('mongodb+srv://');
-  const maskedUri = maskMongoUri(uri);
+  const isProd =
+    config.isProduction ||
+    process.env.NODE_ENV === 'production' ||
+    Boolean(process.env.RENDER);
+  const uri = process.env.MONGODB_URI || (isProd ? '' : config.mongoUri);
 
+  // 1. Production Mode on Render / Cloud
+  if (isProd) {
+    if (!uri) {
+      const errorMsg =
+        '[Database] FATAL: MONGODB_URI environment variable is not defined in production. Please configure your MongoDB Atlas connection string in Render environment variables.';
+      console.error(errorMsg);
+      throw new Error(errorMsg);
+    }
+
+    const maskedUri = maskMongoUri(uri);
+    console.log(`[Database] Connecting to production MongoDB Atlas (${maskedUri})...`);
+
+    const mongooseOptions = {
+      serverSelectionTimeoutMS: 10000,
+      maxPoolSize: 10,
+      socketTimeoutMS: 45000,
+    };
+
+    try {
+      await mongoose.connect(uri, mongooseOptions);
+      console.log(`[Database] Production MongoDB Atlas connected successfully.`);
+      return mongoose.connection;
+    } catch (err) {
+      console.error(`[Database] Production connection to MongoDB Atlas failed: ${err.message}`);
+      throw new Error(
+        `Failed to connect to MongoDB Atlas (${maskedUri}): ${err.message}. Please verify Network Access (whitelist 0.0.0.0/0 on Atlas) and database credentials in Render MONGODB_URI.`
+      );
+    }
+  }
+
+  // 2. Development / Testing Mode
+  const devUri = uri || 'mongodb://127.0.0.1:27017/collegegpt';
+  const maskedUri = maskMongoUri(devUri);
   console.log(`[Database] Attempting connection to MongoDB (${maskedUri})...`);
 
-  // Connection listeners
-  mongoose.connection.on('connected', () => {
-    const status = getDatabaseStatus();
-    console.log(
-      `[Database] MongoDB connection established successfully! [Host: ${status.host}, Database: ${status.name}, Atlas: ${status.isAtlas ? 'Yes' : 'No'}]`
-    );
-  });
-
-  mongoose.connection.on('error', (err) => {
-    console.error(`[Database] MongoDB connection error: ${err.message}`);
-  });
-
-  mongoose.connection.on('disconnected', () => {
-    console.warn('[Database] MongoDB disconnected. Attempting reconnection...');
-  });
-
-  mongoose.connection.on('reconnected', () => {
-    console.log('[Database] MongoDB connection re-established.');
-  });
-
-  const mongooseOptions = {
-    serverSelectionTimeoutMS: isSrv ? 8000 : 3000,
-    maxPoolSize: 10,
-    socketTimeoutMS: 45000,
-  };
-
   try {
-    await mongoose.connect(uri, mongooseOptions);
+    await mongoose.connect(devUri, {
+      serverSelectionTimeoutMS: 3000,
+      maxPoolSize: 10,
+    });
+    console.log('[Database] Connected to local MongoDB instance.');
     return mongoose.connection;
-  } catch (err) {
-    console.warn(
-      `[Database] Primary MongoDB connection failed (${err.message}).`
-    );
-
-    // If configured URI was local/default and failed, start in-memory MongoDB for local dev fallback
-    if (!isSrv) {
-      console.log('[Database] Starting in-memory MongoDB server for local development...');
-      try {
-        mongod = await MongoMemoryServer.create();
-        const fallbackUri = mongod.getUri();
-        await mongoose.connect(fallbackUri);
-        console.log(`[Database] Connected to fallback In-Memory MongoDB.`);
-        return mongoose.connection;
-      } catch (memErr) {
-        console.error('[Database] In-memory MongoDB initialization failed:', memErr.message);
-        throw memErr;
-      }
-    } else {
-      // Atlas URI was explicitly provided but failed: rethrow error with clear diagnostic guidance
-      throw new Error(`Failed to connect to MongoDB Atlas (${maskedUri}): ${err.message}`);
+  } catch (devErr) {
+    console.warn(`[Database] Local MongoDB unavailable (${devErr.message}). Starting development in-memory fallback...`);
+    try {
+      // Dynamic import ensures mongodb-memory-server is never loaded or executed in production
+      const { MongoMemoryServer } = await import('mongodb-memory-server');
+      mongod = await MongoMemoryServer.create();
+      const fallbackUri = mongod.getUri();
+      await mongoose.connect(fallbackUri);
+      console.log('[Database] Connected to development In-Memory MongoDB fallback.');
+      return mongoose.connection;
+    } catch (memErr) {
+      console.error('[Database] Development In-Memory MongoDB fallback failed:', memErr.message);
+      throw memErr;
     }
   }
 };
@@ -135,6 +141,7 @@ export const disconnectDB = async () => {
     await mongoose.disconnect();
     if (mongod) {
       await mongod.stop();
+      mongod = null;
     }
     console.log('[Database] Disconnected from MongoDB cleanly.');
   } catch (err) {

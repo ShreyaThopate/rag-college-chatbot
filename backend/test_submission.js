@@ -1,13 +1,18 @@
+process.env.NODE_ENV = 'test';
 import axios from 'axios';
 import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import { startServer } from './src/server.js';
+import { disconnectDB } from './src/config/db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const BASE_URL = 'http://localhost:5000/api';
+const PORT = 5002;
+const BASE_URL = `http://localhost:${PORT}/api`;
+let serverInstance = null;
 
 const results = [];
 
@@ -24,6 +29,9 @@ const runSubmissionTestSuite = async () => {
   console.log('DTE Choice Code: EN6187 | Affiliation: Savitribai Phule Pune University (SPPU)');
   console.log('==================================================================================\n');
 
+  // Start isolated test server
+  serverInstance = await startServer(PORT);
+
   let studentToken = null;
   let adminToken = null;
   let studentUser = null;
@@ -33,12 +41,12 @@ const runSubmissionTestSuite = async () => {
   try {
     const health = await axios.get(`${BASE_URL}/health`, { timeout: 4000 });
     if (health.status === 200 && health.data.service === 'CollegeGPT API') {
-      recordResult(1, 'Backend Startup', 'PASS', `Express server running on port 5000 (status: ${health.data.status})`);
+      recordResult(1, 'Backend Startup', 'PASS', `Express server running on port ${PORT} (status: ${health.data.status})`);
     } else {
       recordResult(1, 'Backend Startup', 'FAIL', 'Backend responded with invalid health payload');
     }
   } catch (err) {
-    recordResult(1, 'Backend Startup', 'FAIL', `Could not connect to backend on port 5000: ${err.message}`);
+    recordResult(1, 'Backend Startup', 'FAIL', `Could not connect to backend on port ${PORT}: ${err.message}`);
   }
 
   // 2. MongoDB Connection Check
@@ -341,6 +349,12 @@ const runSubmissionTestSuite = async () => {
 
   console.log(`TOTAL TESTS: ${results.length} | PASSED: ${passCount} | WARNINGS: ${warnCount} | FAILED: ${failCount}`);
   console.log('==================================================================================\n');
+
+  // Clean teardown
+  if (serverInstance) {
+    await new Promise((resolve) => serverInstance.close(resolve));
+  }
+  await disconnectDB();
 
   if (failCount === 0) {
     console.log('🎉 ALL 15 SUBMISSION CRITERIA PASSED! System is 100% submission ready.');
