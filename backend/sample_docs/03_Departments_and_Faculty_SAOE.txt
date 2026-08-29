@@ -1,0 +1,67 @@
+SINHGAD ACADEMY OF ENGINEERING (SAOE), KONDHWA (BK), PUNE
+Approved by AICTE New Delhi, Recognized by Govt. of Maharashtra, Affiliated to Savitribai Phule Pune University (SPPU)
+DTE Institute Code: EN6187 | NAAC Accredited
+
+DOCUMENT 03: ACADEMIC DEPARTMENTS, SPECIALIZED LABORATORIES & FACULTY (2026-2027)
+
+1. DEPARTMENT OF COMPUTER ENGINEERING
+- Head of Department (HOD): Dr. S. B. Shinde (Ph.D. in Computer Science & Engineering).
+- Overview: State-of-the-art computational infrastructure with over 350 high-end desktop workstations running Ubuntu Linux and Windows Enterprise with gigabit internet connectivity.
+- Specialized Laboratories:
+  * Artificial Intelligence & Deep Learning Laboratory (NVIDIA GPU workstations).
+  * Data Science & Cloud Computing Lab (AWS Academy & Google Cloud certified environment).
+  * Cyber Security & Digital Forensics Lab.
+  * Open Source Software & Advanced Programming Lab.
+- Student Association: ACES (Association of Computer Engineering Students) organizes annual hackathons, code sprints, and technical paper presentations.
+- Department Contact: hodcomp.saoe@sinhgad.edu | Ext: 210.
+
+2. DEPARTMENT OF INFORMATION TECHNOLOGY
+- Head of Department (HOD): Prof. A. B. Bagwan (M.E., Ph.D. Pursuing in Information Technology).
+- Overview: Focuses on full-stack web architectures, mobile application development, database management systems, and DevOps methodologies.
+- Specialized Laboratories:
+  * Mobile Computing & Full-Stack Development Lab.
+  * Database & Big Data Analytics Lab.
+  * Human-Computer Interaction & Software Engineering Lab.
+- Student Association: ITSA (Information Technology Students Association) arranges expert guest lectures from Pune IT industry leaders, open-source workshops, and coding bootcamps.
+- Department Contact: hodit.saoe@sinhgad.edu | Ext: 220.
+
+3. DEPARTMENT OF ELECTRONICS & TELECOMMUNICATION (E&TC)
+- Head of Department (HOD): Dr. K. P. Patil (Ph.D. in Signal Processing and Wireless Communication).
+- Overview: Equipped with cutting-edge test and measurement instruments, DSP starter kits, RF spectrum analyzers, and PCB fabrication setup.
+- Specialized Laboratories:
+  * VLSI Design & Embedded Systems Lab (Cadence, Xilinx Vivado software suite).
+  * Internet of Things (IoT) & Robotics Lab.
+  * Optical & Microwave Communication Lab.
+  * Digital Signal & Image Processing Lab.
+- Student Association: ETSA (Electronics & Telecommunication Students Association) organizes Roborace, IoT Project Competitions, and Circuit Design Contests.
+- Department Contact: hodentc.saoe@sinhgad.edu | Ext: 230.
+
+4. DEPARTMENT OF MECHANICAL ENGINEERING
+- Head of Department (HOD): Dr. S. P. Patil (Ph.D. in Thermal Engineering).
+- Overview: Features extensive industrial heavy machinery, CNC machines, wind tunnels, and thermodynamic testing rigs.
+- Specialized Laboratories:
+  * CAD/CAM/CAE Center (Ansys, SolidWorks, CATIA V5, AutoCAD).
+  * Internal Combustion Engines & Automobile Engineering Lab.
+  * Mechatronics & Automation Center.
+  * Metallurgy, Material Testing & Metrology Lab.
+  * Central Workshop (Lathe, Milling, Shaper, Foundry, Welding and Carpentry sections).
+- Student Association: MESA (Mechanical Engineering Students Association) and Sinhgad Racing Team (BAJA SAE, SUPRA SAE competitions).
+- Department Contact: hodmech.saoe@sinhgad.edu | Ext: 240.
+
+5. DEPARTMENT OF CIVIL ENGINEERING
+- Head of Department (HOD): Dr. S. S. Shastri (Ph.D. in Structural Engineering).
+- Overview: Focuses on sustainable infrastructure, environmental modeling, GIS mapping, and concrete technology.
+- Specialized Laboratories:
+  * Structural Engineering & Concrete Technology Lab (Compression Testing Machines).
+  * Geotechnical & Soil Mechanics Lab.
+  * Environmental Engineering & Water Quality Testing Lab.
+  * Advanced Surveying & Total Station Lab (GIS & GPS equipment).
+  * Transportation Engineering & Highway Materials Lab.
+- Student Association: CESA (Civil Engineering Students Association).
+- Department Contact: hodcivil.saoe@sinhgad.edu | Ext: 250.
+
+6. DEPARTMENT OF FIRST YEAR ENGINEERING (ENGINEERING SCIENCES)
+- Head of Department (HOD): Prof. S. L. Gophane (M.Sc. Mathematics).
+- Overview: Manages foundational courses in Applied Mathematics, Applied Physics, Applied Chemistry, Basic Electrical Engineering, and Engineering Mechanics for all incoming first-year students.
+- Laboratories: Applied Physics Lab, Applied Chemistry Lab, Basic Electrical & Electronics Lab, Engineering Mechanics Lab.
+- Contact: hodfe.saoe@sinhgad.edu | Ext: 205.

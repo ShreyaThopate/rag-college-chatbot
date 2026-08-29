@@ -1,0 +1,17 @@
+{
+  "name": "collegegpt-workspace",
+  "version": "1.0.0",
+  "description": "CollegeGPT — AI-Powered College Information Assistant (RAG)",
+  "scripts": {
+    "dev:backend": "cd backend && npm start",
+    "dev:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "ingest": "cd backend && npm run ingest",
+    "test": "cd backend && npm run test",
+    "test:rag": "cd backend && npm run test:rag",
+    "test:auth": "cd backend && npm run test:auth",
+    "test:submission": "cd backend && npm run test:submission",
+    "build": "cd frontend && npm run build",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  }
+}

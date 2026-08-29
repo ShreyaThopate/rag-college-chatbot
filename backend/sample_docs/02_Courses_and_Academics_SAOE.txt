@@ -1,0 +1,44 @@
+SINHGAD ACADEMY OF ENGINEERING (SAOE), KONDHWA (BK), PUNE
+Approved by AICTE New Delhi, Recognized by Govt. of Maharashtra, Affiliated to Savitribai Phule Pune University (SPPU)
+DTE Institute Code: EN6187 | NAAC Accredited
+
+DOCUMENT 02: COURSES OFFERED, ACADEMIC CURRICULUM & REGULATIONS (2026-2027)
+
+1. UNDERGRADUATE DEGREE PROGRAMS (FOUR-YEAR B.E.)
+Sinhgad Academy of Engineering offers the following full-time four-year Bachelor of Engineering (B.E.) degree courses affiliated with Savitribai Phule Pune University (SPPU):
+- Computer Engineering: Sanctioned Intake - 180 Seats (Choice Code: 618724510)
+- Information Technology: Sanctioned Intake - 120 Seats (Choice Code: 618724610)
+- Electronics & Telecommunication Engineering (E&TC): Sanctioned Intake - 120 Seats (Choice Code: 618737210)
+- Mechanical Engineering: Sanctioned Intake - 120 Seats (Choice Code: 618761210)
+- Civil Engineering: Sanctioned Intake - 60 Seats (Choice Code: 618719110)
+
+Postgraduate (M.E.) Programs:
+- M.E. in Computer Engineering: Sanctioned Intake - 24 Seats
+- M.E. in VLSI & Embedded Systems (E&TC): Sanctioned Intake - 18 Seats
+- M.E. in Mechanical Design Engineering: Sanctioned Intake - 18 Seats
+
+2. SPPU CHOICE BASED CREDIT SYSTEM (CBCS)
+- The curriculum follows Savitribai Phule Pune University's Choice Based Credit System (CBCS) pattern.
+- Total Credits Required for B.E. Degree: 160 Credits distributed across 8 semesters.
+- Evaluation Scheme per Course:
+  * In-Semester Examination (In-Sem): 30 Marks conducted mid-semester by SPPU.
+  * End-Semester Examination (End-Sem): 70 Marks conducted at semester conclusion by SPPU.
+  * Term Work (TW) / Continuous Assessment: 25 to 50 Marks evaluated based on timely lab assignment submissions, attendance, and mini-projects.
+  * Practical / Oral Examination (PR/OR): 25 to 50 Marks assessed jointly by internal and external university examiners.
+- Passing Standard: Minimum 40% aggregate in End-Sem and In-Sem combined, with at least 28 marks out of 70 in the End-Sem written exam.
+
+3. ACADEMIC CALENDAR & SCHEDULE
+- Academic Year Structure: Divided into two terms (Term I: July to November; Term II: January to May).
+- In-Sem Examinations: Typically scheduled in the 6th to 8th week of the semester.
+- Term-Work Submission & Mock Oral Examinations: Conducted 2 weeks prior to university theory examinations.
+- Remedial & Bridge Courses: Conducted during the first 3 weeks for Direct Second Year (DSE) lateral entry students to cover foundational concepts.
+
+4. ATTENDANCE MONITORING & ERP SYSTEM
+- Minimum 75% attendance in theory lectures and 100% attendance in practical laboratory sessions is strictly mandatory as per Savitribai Phule Pune University Ordinance 0.60.
+- Daily attendance is logged through the STES Central GEMS ERP portal (gems.sinhgad.edu).
+- Attendance Defaulters List: Published on the 5th of every month. Students with attendance between 60% and 75% on genuine medical grounds must submit medical certificates attested by the campus health center. Students below 60% are detained from appearing in university semester examinations.
+
+5. ACADEMIC DEAN & COUNSELING CELL
+- Academic Monitoring Committee: Headed by Vice-Principal & Academic Coordinator, SAOE.
+- Teacher-Guardian Scheme (TGS): Every student is assigned a dedicated faculty counselor (TG) for continuous academic tracking, career guidance, and parent-teacher communication.
+- Contact: academic.saoe@sinhgad.edu | Office: First Floor, Academic Section, SAOE Kondhwa.

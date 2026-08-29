@@ -1,0 +1,20 @@
+# Node dependencies
+node_modules/
+
+# Environment files with secrets (CRITICAL)
+.env
+.env.local
+.env.*.local
+
+# Always allow .env.example
+!.env.example
+
+# Uploads and temporary files
+uploads/*
+!uploads/.gitkeep
+data/*
+!data/.gitkeep
+
+# Logs
+logs/
+*.log

@@ -1,0 +1,43 @@
+SINHGAD ACADEMY OF ENGINEERING (SAOE), KONDHWA (BK), PUNE
+Approved by AICTE New Delhi, Recognized by Govt. of Maharashtra, Affiliated to Savitribai Phule Pune University (SPPU)
+DTE Institute Code: EN6187 | NAAC Accredited
+
+DOCUMENT 06: TRAINING & PLACEMENT CELL (CENTRAL PLACEMENT CELL - CPC) (2026-2027)
+
+1. SINHGAD CENTRAL PLACEMENT CELL (CPC) OVERVIEW
+The Training and Placement activities for Sinhgad Academy of Engineering are centrally driven by the Sinhgad Institutes Central Placement Cell (CPC) located at the Sinhgad Campus, Pune. The CPC pool drives connect all engineering colleges under the Sinhgad banner, attracting over 300+ marquee national and multinational corporations annually. In addition, SAOE maintains an independent, dedicated Departmental Training & Placement (T&P) coordination team.
+
+Key Placement Highlights:
+- Highest Salary Package Offered: Rs. 32.0 LPA (International/Product MNCs).
+- Average Salary Package: Rs. 4.8 LPA to Rs. 6.2 LPA across branches.
+- Total Offers Generated Annually across Sinhgad Institutes: Over 4,500+ job offers.
+- Mass Recruiters & Day-1 Partners: Accenture, Cognizant, Tata Consultancy Services (TCS), Infosys, Capgemini, Tech Mahindra, Wipro, DXC Technology.
+- Product & Core Engineering Recruiters: Persistent Systems, Zensar, KPIT Technologies, Hexaware, L&T Technology Services, Veritas, Atlas Copco, Bosch, Tata Motors, Thermax, Forbes Marshall, Godrej & Boyce, Bharat Forge.
+
+2. STUDENT TRAINING & VALUE ADDED PROGRAMS (VAP)
+To groom students into industry-ready software engineers, systems analysts, and core design specialists, SAOE conducts mandatory Value Added Programs starting from the second year:
+- Employability Assessment Tests: AMCAT, CoCubes, and eLitmus diagnostic testing to benchmark aptitude, reasoning, and technical proficiencies.
+- Technical Skill Enhancement:
+  * Full Stack Web Development (MERN/MEAN stack, Spring Boot).
+  * Data Structures & Algorithms (DSA) Bootcamps on LeetCode & HackerRank.
+  * Cloud Computing Foundations (AWS Cloud Practitioner & Microsoft Azure).
+  * Python, C++, Java, and Embedded Systems programming.
+- Soft Skills & Professional Communication: Mock Group Discussions (GD), Technical Mock Interviews conducted by alumni, Resume writing workshops, and Corporate Etiquette training.
+
+3. PLACEMENT ELIGIBILITY NORMS & REGISTRATION POLICY
+- Registration: Final year students must register on the Sinhgad Placement Portal (placements.sinhgad.edu) by July 15 of their 7th semester.
+- Academic Eligibility Criteria:
+  * Minimum 60% aggregate (or 6.5+ CGPA) throughout 10th, 12th/Diploma, and Engineering with no active backlogs for Tier-1 IT & Product companies.
+  * Minimum 55% aggregate for mass recruitment drives.
+- One-Student-One-Job Policy: Once a student receives a core/IT dream offer (> Rs. 6.0 LPA), they are permitted to attempt only Super Dream opportunities (> Rs. 10.0 LPA) to ensure equitable opportunities for peers.
+- Attendance Mandate: Registered students must attend at least 85% of pre-placement training modules to remain eligible for CPC recruitment drives.
+
+4. INTERNSHIPS & INDUSTRY-INSTITUTE PARTNERSHIPS
+- Mandatory SPPU Semester 8 Internship: Students are facilitated to pursue full-semester 6-month industrial internships at companies such as Persistent, KPIT, Siemens, and various Pune IT Park technology startups.
+- MOUs Signed: Over 45+ Memorandums of Understanding with tech organizations, including AWS Academy, Red Hat Academy, and Cisco Networking Academy.
+
+5. T&P CELL DIRECTORY & CONTACT
+- Training & Placement Officer (TPO), SAOE: Prof. P. V. Ingle.
+- Central Placement Cell (CPC) Dean: Dr. P. K. Singh.
+- Placement Office: Ground Floor, Training & Placement Suite, SAOE Kondhwa, Pune.
+- Email: tpo.saoe@sinhgad.edu | cpc@sinhgad.edu | Direct Helpline: 020-26934552 / +91-9881002233.
